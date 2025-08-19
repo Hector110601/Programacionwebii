@@ -1,0 +1,55 @@
+/* --- Estilos generales para el nav --- */
+nav ul {
+  list-style: none;     /* Quita viñetas del menú principal */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;   /* Necesario para posicionar submenús */
+}
+
+nav ul li a {
+  text-decoration: none;
+  display: block;
+}
+
+/* --- Submenús --- */
+nav ul li ul {
+  list-style: none;     /* Sin viñetas en submenús */
+  padding-left: 0;      /* Sin sangría */
+  margin: 0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  position: absolute;
+  top: 90px;            /* Posición inicial (oculto) */
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  z-index: 10;
+  transition: all 300ms ease;
+}
+
+/* --- Mostrar submenú al pasar el mouse --- */
+nav ul li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  top: 70px; /* Movimiento suave hacia arriba */
+}
+
+/* --- Estilos para elementos del submenú --- */
+nav ul li ul li {
+  padding: 10px;
+}
+
+nav ul li ul li a {
+  color: black;
+  padding: 10px;
+}
+
+nav ul li ul li a:hover {
+  background-color: #f0f0f0;
+}

@@ -1,0 +1,43 @@
+.imagen {
+  background-image: url('assets/img/cat1.png'); /* Cambia aquí la imagen */
+  background-size: cover;       /* Ajusta la imagen a todo el contenedor */
+  background-position: center;  /* Centra la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+  min-height: 400px;             /* Altura mínima para que se vea bien */
+  width: 100%;                   /* Ocupa todo el ancho */
+
+  position: relative;            /* Necesario para el overlay */
+  display: flex;                 /* Centrar contenido */
+  flex-direction: column;        /* Texto y botón uno debajo del otro */
+  justify-content: center;       /* Centrar verticalmente */
+  align-items: center;           /* Centrar horizontalmente */
+  padding: 40px;
+  text-align: center;
+}
+
+.imagen::after {
+  content: "";
+  position: absolute;
+  inset: 0;                      /* Cubre todo el contenedor */
+  background-color: rgba(0,0,0,0.25); /* Overlay oscuro suave */
+}
+
+.imagen * {
+  position: relative;  /* Para estar por encima del overlay */
+  z-index: 1;
+  color: white;
+}
+
+.imagen button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  border: none;
+  cursor: pointer;
+}
+
+.imagen button a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}

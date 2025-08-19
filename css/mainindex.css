@@ -1,0 +1,71 @@
+
+.masthead {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.masthead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4); /* oscurece un poco */
+}
+
+.masthead > * {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.indice {
+  list-style: none;
+  padding-left: 0;
+}
+
+.indice li {
+  position: relative;
+  padding: 10px;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+.indice li:hover {
+  background: #e0e0e0;
+}
+
+/* Submenús ocultos por defecto */
+.indice li .submenu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 100%; /* aparece a la derecha o cámbialo a top:100%; left:0 para abajo */
+  background: white;
+  border: 1px solid #ccc;
+  display: none;
+  z-index: 10;
+}
+
+.indice li:hover > .submenu {
+  display: block; /* Se muestra al pasar el mouse */
+}
+
+.submenu li {
+  padding: 10px;
+}
+
+.submenu li:hover {
+  background: #f0f0f0;
+}
+.indice li .submenu {
+  top: 100%;
+  left: 0;
+}
